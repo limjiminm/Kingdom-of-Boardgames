@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Kingdom of Boardgames</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="eb6672a8-06ac-4033-ba7b-40805a3907d4" class="page sans"><header><img class="page-cover-image" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/81fa3a56-ff14-41a8-af9a-c8570dfc7998.webp" style="object-position:center 45.04%"/><h1 class="page-title">Kingdom of Boardgames</h1><p class="page-description"></p></header><div class="page-body"><div id="5ead2f72-4f62-4fba-a689-5d8cb295eaf9" class="column-list"><div id="27276bc3-2b9e-4130-b90c-5fd1536eff38" style="width:37.5%" class="column"><figure id="e54b0d10-c35a-45e7-b5a4-353bb64a25d6" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/%25EC%25A0%259C%25EB%25AA%25A9_%25EC%2597%2586%25EC%259D%258C-1.png"><img style="width:240px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/%25EC%25A0%259C%25EB%25AA%25A9_%25EC%2597%2586%25EC%259D%258C-1.png"/></a></figure></div><div id="7c53cb81-47dd-40ce-9854-3e2fb001a03e" style="width:62.50000000000002%" class="column"><figure id="6eb3ebb5-3971-439a-aa72-aa058bcd9f00" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Untitled.png"><img style="width:432px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Untitled.png"/></a></figure><p id="f55eab88-15c7-44ff-a5a7-bfb610288150" class="">
+</p></div></div><figure id="19e6d2d0-dbe2-4f0e-8764-5a6a375e5e63"><div class="source"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/game_trailer.m4v">https://prod-files-secure.s3.us-west-2.amazonaws.com/747bfddb-3dff-4cf0-9e42-78d2e5a91321/051cd4e9-3c3e-452d-81d6-0903a285d300/game_trailer.m4v</a></div></figure><p id="8d8fc2f6-ee56-417f-b6ee-28bf383e1a33" class="">
+</p><hr id="deb6a522-cf5b-4e36-92df-22ad05e10f46"/><h2 id="424ae2b2-c7d7-4d3a-969e-91d093b40411" class=""><strong>Quick Facts</strong></h2><ul id="518dd035-5db1-4a3d-95c5-f7b421f9b4ad" class="bulleted-list"><li style="list-style-type:disc"><strong>Game name :</strong> Kingdom of Boardgames</li></ul><ul id="4ba0a515-95d3-49c2-af64-05a2a535ccbf" class="bulleted-list"><li style="list-style-type:disc"><strong>Elevator Pitch:</strong><p id="61e048b2-20e4-48f3-8e3a-df995eb6a962" class="">Game projects have invaded the peaceful world of board games!<br/>Prevent their invasion with the mysterious abilities of playing cards and various board games!<br/></p></li></ul><ul id="f1fc6983-4593-4adc-9f2e-7424684eeb35" class="bulleted-list"><li style="list-style-type:disc"><strong>Contact our Team : </strong>Stellar<ul id="3407c71c-1ec3-437e-ba24-a4d457e12d7d" class="bulleted-list"><li style="list-style-type:circle"><strong>Producer </strong>- Cheonho Park <mark class="highlight-default"><a href="mailto:cheonho.park@digipen.edu">cheonho.park@digipen.edu</a></mark></li></ul></li></ul><ul id="7080a3f7-47ae-401f-b3ab-d102c9a9edc0" class="bulleted-list"><li style="list-style-type:disc"><strong>Features</strong><ul id="45d3b21b-8d33-4de6-9475-aec65ff9ee96" class="bulleted-list"><li style="list-style-type:circle">Tower Defense + Action + Strategy</li></ul><ul id="05b02674-aef7-4300-9a3c-8f6846e5a091" class="bulleted-list"><li style="list-style-type:circle">9 levels including 4 unique environments like rainy, fog, and thunder</li></ul><ul id="4eb85481-43d8-4333-b1ca-26141942213f" class="bulleted-list"><li style="list-style-type:circle">Enhance Unit System</li></ul><ul id="6c2a2689-d26b-4cc6-8699-92e9ff459a7d" class="bulleted-list"><li style="list-style-type:circle">Revenue System</li></ul><ul id="3046f347-6813-4d82-9c64-a72c31271f67" class="bulleted-list"><li style="list-style-type:circle">Select Skills with Poker System</li></ul><ul id="38614d1b-c484-40f3-bc65-f83a830101b3" class="bulleted-list"><li style="list-style-type:circle"><strong>Characters:</strong><ul id="c0e921ad-86d9-4c24-9588-94151f2d40ef" class="bulleted-list"><li style="list-style-type:square">Main Character: Joker</li></ul><ul id="7cbac226-b492-42d0-81ca-0794785fa88b" class="bulleted-list"><li style="list-style-type:square">Player’s Team: 9 unique units</li></ul><ul id="f00f9b82-d015-4798-a540-30f935c65db2" class="bulleted-list"><li style="list-style-type:square">Enemy’s Team: 7 formidable units</li></ul></li></ul><ul id="4e10801d-b770-499f-81b8-c2e14099e0f1" class="bulleted-list"><li style="list-style-type:circle"><strong>Short description</strong><p id="74b711e1-a987-4eae-a026-cde6da02a9c9" class=""> In a world of board games with 9 levels and 4 different environments, join forces with board games to defend the kingdom from digital game enemies! Enhance your units and upgrade your skills through poker cards. Try out various strategies!</p></li></ul></li></ul><ul id="54550415-24d3-4fb3-8a0c-6057e0fc052e" class="bulleted-list"><li style="list-style-type:disc"><strong>GitHub Page - </strong><a href="https://github.com/CheonhoPark-dev/Kingdom_of_Boardgames">https://github.com/CheonhoPark-dev/Kingdom_of_Boardgames</a></li></ul><div id="7155eeca-4e04-4ce8-a651-49fd76ac2820" class="column-list"><div id="28307067-7bfc-4d2f-8e05-028c7e6e28fd" style="width:33.33333333333333%" class="column"><h2 id="90abdb71-e553-4886-a200-8cfbb5c55dd8" class="">Platform </h2><p id="b81ac868-308d-428d-9104-4a3610b5b46a" class="">Windows PC</p></div><div id="9e25b594-d45a-433b-b164-40193d4348bf" style="width:33.33333333333333%" class="column"><h2 id="63f27af9-1247-42c4-be44-ac282b85b94c" class="">Required Architecture</h2><p id="1bbcc2d5-79a1-4425-85a3-5bb81f00729b" class="">CPU : i5 or Ryzen7</p><p id="04034433-1c3e-4896-8d95-08bbc8a7d7b5" class="">Ram : 16GB</p><p id="38758b19-9d5a-43de-9f82-9aad9e943121" class="">GPU : Nvidia External Graphic Card / Amd Radeon Graphic</p></div><div id="c042a62c-3736-4bd4-82c9-91f52b581f5b" style="width:33.33333333333333%" class="column"><h2 id="fbb06b67-2e7e-4ae9-85f1-12187c27ae51" class="">Release dates</h2><p id="280ff4c6-7f64-4b04-94f7-d9c211b94fba" class="">June 18th, 2024</p><p id="45f4a64f-b813-4c33-a935-63428a36081a" class="">
+</p></div></div><div id="7999a7aa-c01e-44eb-ae10-7f9de87ab40d" class="column-list"></div><p id="e43641f5-6a30-449f-9c72-2f8555e28ee6" class="">
+</p><h2 id="cb0ad36f-d281-4841-aba8-71d5074e57ef" class="">Longer description of the game </h2><p id="06b0dee2-7ed2-46f3-a6f6-6ff3632baca4" class=""> Navigate through 9 stages, each featuring different weather conditions and enemies, by selecting units, creating player skills through a poker game, and strategically placing units. The units are characters from board games, while the enemies are characters from digital games. Protect the Board Game Kingdom from the digital game invasion by placing your units to prevent enemies from escaping the tiles.</p><p id="d397fcdb-7773-4cd9-8cb8-b423aadd9fbb" class=""> You can enhance each unit. As you progress through the stages, utilize the upgrade function to strengthen your units. Your strategy is crucial to defeating the enemies.</p><h2 id="92831974-8a55-424c-8885-318c8107ef2d" class="">Gameplay Description: How to Play</h2><p id="75cbc7df-5ba7-4f94-8ed3-953b1badcf85" class=""> You are the hero destined to save the Board Game Kingdom. First, select the units you will use for defense. Each stage has different units available and varying weather conditions, so strategic unit selection is crucial. Refer to the window that shows the attributes of each unit.</p><p id="43c7af90-917d-4ce8-8baf-93aa937313b8" class=""> After choosing your units, you can select player skills using poker cards. The higher the poker hand, the more powerful the player skills you will obtain. If you are unfamiliar with poker rules, consult the poker book at the top.</p><p id="24df4ef8-127a-4d11-a422-bfcc81065f02" class=""> Once the game starts, you can place your units. Each unit can be used according to its attack power and cooldown time. If an enemy escapes the tile, the game is over. If you defeat all the enemies, you win. The currency earned in-game can be used for the next stage.</p><h2 id="adb2b1e0-d173-46c9-b96e-ae2ca934568e" class="">Game Reviews</h2><p id="3f3eb83f-0f4f-4315-8769-0788e051c5b9" class=""><strong>Anonymous Review 1:</strong><br/>&quot;This game has truly stunning visual effects. Each stage brings unique visuals and animations that are a feast for the eyes. The graphics significantly enhance the immersion.&quot;<br/></p><p id="6142011d-5cf7-43c9-8deb-6d9c7884b46b" class=""><strong>Anonymous Review 2:</strong><br/>&quot;A top-down tower defense game combined with action elements is so innovative! Not only defending but also controlling a character to attack enemies was a refreshing experience. The poker system for acquiring skills added a great strategic layer to the game.&quot;<br/></p><p id="df0eaee9-89df-4f5e-8909-a14bbd698430" class=""><strong>Anonymous Review 3:</strong><br/>&quot;The ending was completely unexpected. The storyline took an unforeseen turn, keeping the tension high until the very end. I had a blast playing it. Looking forward to the next installment!&quot;<br/></p><p id="5e0f7747-fb4f-45f4-a1ec-0e3ac86b6245" class="">
+</p><hr id="3c26e6e9-d54b-4ccf-8fe4-714ca59280d9"/><h1 id="d4cd65cb-14e9-4365-8fc3-934f0e57471d" class=""><strong>Screenshots</strong></h1><div id="6bc2a990-5979-400d-b68e-f2bcc3ab3f16" class="column-list"><div id="c209a1ac-5018-444c-b5a0-3dacd30d3282" style="width:50%" class="column"><figure id="6ae97bdd-c116-41f5-a78b-2941e6b028bb" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/PlayStage9.gif"><img style="width:336px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/PlayStage9.gif"/></a></figure></div><div id="0aff5707-3d0a-410a-8685-a62a15fade71" style="width:50%" class="column"><figure id="a04e33ca-997e-44cf-8405-fbf5b0e3c52d" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Select_Unit.png"><img style="width:1279px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Select_Unit.png"/></a></figure></div></div><div id="ea387e22-f2e9-421f-a073-dbfabda45fac" class="column-list"><div id="6300ccf8-3732-4806-a20d-be0b302a3ee9" style="width:50%" class="column"><figure id="521e0e5e-022a-440d-b328-eba216d81b6c" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Mainmenu.png"><img style="width:331px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Mainmenu.png"/></a></figure></div><div id="fa168409-fae2-4fb0-a09c-364d0c9874b2" style="width:50%" class="column"><figure id="23d0cfe9-d111-4641-a1b8-40e3989f7c80" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Enhance_Store.png"><img style="width:336px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Enhance_Store.png"/></a></figure></div></div><div id="dd7ce1f8-8227-404a-8b3c-3b0a2abbc57f" class="column-list"><div id="e14dcdc2-55fd-4c34-9b7d-b09277c61a17" style="width:50%" class="column"><figure id="340624f8-9a61-46c2-92f9-e1eca172c333" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Four_of_a_Kind.png"><img style="width:336px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Four_of_a_Kind.png"/></a></figure></div><div id="e0d1f55b-682e-4f2a-aaae-31713149fbc4" style="width:50%" class="column"><figure id="a76c4dd8-6fef-4274-896d-9f3f681e5160" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Start1.png"><img style="width:331px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Start1.png"/></a></figure></div></div><div id="2e64ec39-8f3b-4575-b205-5a3e8808ce22" class="column-list"><div id="34218ae8-968b-42ca-b693-1401d25b9157" style="width:50%" class="column"><figure id="381c6371-7981-4169-a3a4-65e55ec1e965" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/WorldMap.gif"><img style="width:336px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/WorldMap.gif"/></a></figure></div><div id="cc88361f-99c0-4918-9fc9-7836b0a03bd5" style="width:50%" class="column"><figure id="41efb529-98fd-4fec-b0bf-8579735c6859" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Pokerbook-Animation.gif"><img style="width:336px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Pokerbook-Animation.gif"/></a></figure></div></div><div id="629a290b-f0dd-4ed2-bd26-1671fec8a6c6" class="column-list"><div id="29838b35-1f0b-493b-afa5-9b0bb979be06" style="width:50%" class="column"><figure id="6691a6c6-21ac-4c6b-b453-1468d9766dbb" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/UnitsEnemies.png"><img style="width:960px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/UnitsEnemies.png"/></a></figure></div><div id="7afee3c0-0fab-49ef-8876-a40995c8a9b0" style="width:50.000000000000014%" class="column"><figure id="f98c8c16-2234-4913-8af4-702ef458022e" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Skills.png"><img style="width:336px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Skills.png"/></a></figure></div></div><p id="1bd9471d-f9ad-49d1-aa83-b0dd7b2e0ab6" class="">
+</p><div id="5be2233b-2c59-4281-9149-60406049ba68" class="column-list"><div id="67aba488-fbad-4659-aa17-4016c1e7f68c" style="width:50%" class="column"><figure id="667d4bfc-aee1-4c77-8362-c9feadae93e8" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Joker_icon.png"><img style="width:300px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Joker_icon.png"/></a></figure></div><div id="a32ffa08-eb3e-4471-b072-86a9500030e2" style="width:50%" class="column"><figure id="f09edac4-be1a-4f59-94fb-8d3d0b93dc00" class="image"><a href="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Bonanza_icon.png"><img style="width:300px" src="Kingdom%20of%20Boardgames%20eb6672a806ac4033ba7b40805a3907d4/Bonanza_icon.png"/></a></figure></div></div><p id="dfb6fef4-3c8e-4c1f-afc1-0381e53b0da4" class="">
+</p><p id="83621950-784b-475c-ba8e-21849c4f49b6" class=""><strong>There are more fancy images in the ‘images.zip’ file.</strong></p><h2 id="989d39d4-b210-4625-a27c-7381e6a84157" class="">Dive into the Adventure of &#x27;Kingdom of Boardgames&#x27;!</h2><blockquote id="9d5a4883-ff09-43e3-8881-dcf84dde3baf" class=""><em><mark class="highlight-default"> Experience the thrill of &#x27;Kingdom of Boardgames&#x27; today!<br/> Dive into stunning visuals and innovative gameplay that will keep you on the edge of your seat.<br/> Download now and discover the unexpected twists and strategic depth that everyone is talking about. <br/></mark></em></blockquote><h2 id="2d685fea-dfdf-4b9e-a4b5-ba035e928392" class="">Developer Description</h2><blockquote id="36f8b8ba-b0ca-4662-a57c-c93eab5832f9" class=""><em> Developed by Stellar, &#x27;Kingdom of Boardgames&#x27; is a groundbreaking game that combines the strategic elements of top-down tower defense with the excitement of action gameplay. Immerse yourself in a visually stunning world where each stage presents unique visuals and animations that enhance your gaming experience. Not only will you defend your Kingdom, but you&#x27;ll also take control of a hero character to directly combat enemies, adding a refreshing twist to traditional tower defense mechanics.<br/><br/> Our innovative poker system for acquiring skills introduces a strategic layer that keeps the gameplay fresh and engaging. With an unexpected storyline that keeps players guessing until the very end, &#x27;Kingdom of Boardgames&#x27; offers an unforgettable gaming experience. Whether you&#x27;re a fan of tower defense, action games, or both, this game has something for everyone. Download now and join the adventure!<br/></em></blockquote><p id="52aa83ef-8006-4dd0-ba34-14274bb2ff71" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
